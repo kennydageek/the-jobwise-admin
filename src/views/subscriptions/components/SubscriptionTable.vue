@@ -17,13 +17,13 @@
 
       <tbody>
         <tr v-for="(item, index) in props.items" :key="index">
-          <td>{{ item.user.first_name }} {{ item.user.last_name }}</td>
+          <td>{{ item?.user?.first_name }} {{ item?.user?.last_name }}</td>
           <td>
             <router-link
               :to="`/subscriptions/${item.subscription_id}/details`"
               class="underline"
             >
-              {{ item.subscription_id.slice(0, 20) }}
+              {{ item?.subscription_id?.slice(0, 20) }}
             </router-link>
           </td>
           <td>${{ item?.subscription_plan?.price / 100 }}</td>
